@@ -57,7 +57,6 @@ def pubMedSearch(query, numberOfArticles=5, email='someone@email.com'):
 
         ##  Abstracts  (some PubMed articles don't have them!!!)
         if 'Abstract' in papers['PubmedArticle'][i]['MedlineCitation']['Article']:
-#            abstract = papers['PubmedArticle'][i]['MedlineCitation']['Article']['Abstract']['AbstractText'][0]
             abstract = papers['PubmedArticle'][i]['MedlineCitation']['Article']['Abstract']['AbstractText']
             abstracts.append(abstract)
         else:

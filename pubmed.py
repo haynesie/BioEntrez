@@ -22,7 +22,6 @@ def main():
     else:
         usage_and_exit()
 
-
     if  not number_returned:
         print("\n No articles found for", sys.argv[1], ".\n")
 
