@@ -57,13 +57,14 @@ def pubMedSearch(query, numberOfArticles=5, email='someone@email.com'):
 
         ##  Abstracts  (some PubMed articles don't have them!!!)
         if 'Abstract' in papers['PubmedArticle'][i]['MedlineCitation']['Article']:
-            abstract = unicode(papers['PubmedArticle'][i]['MedlineCitation']['Article']['Abstract']['AbstractText'][0])
+#            abstract = papers['PubmedArticle'][i]['MedlineCitation']['Article']['Abstract']['AbstractText'][0]
+            abstract = papers['PubmedArticle'][i]['MedlineCitation']['Article']['Abstract']['AbstractText']
             abstracts.append(abstract)
         else:
             abstract = '(No abstract.)'
             abstracts.append(abstract)
 
-    combined_results = zip(results['IdList'], titles, dates, authors, abstracts)
+    combined_results = list(zip(results['IdList'], titles, dates, authors, abstracts))
     number_returned = len(combined_results)
 
     return((combined_results, number_returned))
